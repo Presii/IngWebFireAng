@@ -1,0 +1,17 @@
+<div style="padding:50px 50px;">
+<alert type="success">hello</alert>
+  <div> {{ (af.auth | async)?.uid }} </div>
+  <ul class="list-group">    
+  <li class="list-group-item" *ngFor="let item of items | async">
+    User: {{ item.username}}
+     <p> say: {{ item.text}}</p>   
+  </li>
+  </ul>
+  <input type="text" #newitem />
+  <button (click)="addItem(newitem.value)">Add</button>
+  <button (click)="deleteEverything()">Delete All</button>
+  <button class="btn btn-info" (click)="loginTwt()">Login With Twitter</button>
+  <button class="btn btn-primary" (click)="loginFb()">Login With Facebook</button>
+  <button class="btn btn-danger" (click)="loginGplus()">Login With G+</button>
+  <button class="btn btn-default" (click)="logout()">Logout</button>
+</div>
